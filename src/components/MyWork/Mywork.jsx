@@ -1,0 +1,30 @@
+import React from 'react'
+import './MyWork.css'
+import mywork_data from '../../assets/mywork_data'
+import arrow_icon from '../../assets/arrow_icon.svg'
+
+const MyWork = () => {
+    return (
+      <div id='mywork' className='mywork'>
+          <div className="mywork-title">
+              <h1>My latest work</h1>
+              {/* <img src={theme_pattern} alt="" width='150px' /> */}
+          </div>
+          <div className="mywork-container">
+              {
+                  mywork_data.map((work,index)=>{
+                      return <div><img key={index} src={work.w_img} /></div>
+                  })
+              }
+          </div>
+          <div className="mywork-showmore">
+              <p>Show More</p>
+              <img src={arrow_icon} alt='' width='25' />
+          </div>
+  
+        
+      </div>
+    )
+  }
+
+  export default MyWork
